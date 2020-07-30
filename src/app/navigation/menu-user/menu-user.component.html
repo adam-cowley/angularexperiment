@@ -1,0 +1,25 @@
+<div class="navigation-item navigation-user flex mb-1 text-sm"
+    [ngClass]="{ 'text-gray-400': !user.suspended, 'text-gray-600': user.suspended }"
+>
+    <span class="flex flex-grow">
+        {{ user.user }}
+    </span>
+
+
+    <div class="navigation-item-actions navigation-user-actions flex flex-row items-center text-gray-400">
+        <fa-icon *ngIf="user.suspended" [icon]="activate" class="ml-1"></fa-icon>
+        <fa-icon *ngIf="!user.suspended" [icon]="suspend" class="ml-1"></fa-icon>
+
+        <fa-icon [icon]="edit" class="ml-1"></fa-icon>
+        <fa-icon [icon]="delete" class="ml-1"></fa-icon>
+
+    </div>
+
+    <div class="navigation-item-status navigation-user-status flex flex-row items-center">
+        <container-element *ngIf="user.suspended">
+            <!-- <span class="text-xs text-gray-500 flex">Suspended</span> -->
+            <span  class="block align-middle ml-2 w-2 h-2 bg-red-500 rounded-full"></span>
+        </container-element>
+    </div>
+
+</div>

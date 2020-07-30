@@ -1,0 +1,52 @@
+<div class="login fixed h-full w-full flex flex-col justify-center bg-blue-100">
+    <div class="flex flex-row justify-center">
+
+      <div class="flex flex-col bg-white rounded-md overflow-hidden">
+
+        <div class="bg-blue-800 text-white font-bold p-4">
+          Login
+        </div>
+
+        <div class="form-row p-4 flex flex-row">
+          <div class="form-item mr-1">
+            <div class="text-xs uppercase text-blue-600 mb-2">Protocol</div>
+
+            <select name="" id="" class="p-2 rounded-md text-blue-800 h-10 mr-1 bg-blue-100">
+              <option value="neo4j">neo4j</option>
+              <option value="neo4j+s">neo4j+s</option>
+              <option value="neo4j+ssc">neo4j+ssc</option>
+              <option value="bolt">bolt</option>
+              <option value="bolt+s">bolt+s</option>
+              <option value="bolt+ssc">bolt+ssc</option>
+            </select>
+            <span class="text-sm text-blue-600">://</span>
+          </div>
+
+          <div class="form-item mr-1">
+            <div class="text-xs uppercase text-blue-600 mb-2">Host</div>
+            <input class="p-2 rounded-md text-blue-800 mr-1 bg-blue-100" type="text" placeholder="host">
+            <span class="text-sm text-blue-600">:</span>
+          </div>
+          <div class="form-item">
+            <div class="text-xs uppercase text-blue-600 mb-2">Port</div>
+            <input class="p-2 w-24 rounded-md text-blue-800  bg-blue-100" type="number" placeholder="port">
+          </div>
+        </div>
+        <div class="form-row p-4 flex flex-row">
+          <div class="form-item w-full">
+            <div class="text-xs uppercase text-blue-600 mb-2">Username</div>
+            <input class="p-2 rounded-md text-blue-800 mr-1 bg-blue-100 w-full" type="text" placeholder="username">
+          </div>
+        </div>
+        <div class="form-row p-4 flex flex-row">
+          <div class="form-item w-full">
+            <div class="text-xs uppercase text-blue-600 mb-2">Password</div>
+            <input class="p-2 rounded-md text-blue-800 mr-1 bg-blue-100 w-full" type="text" placeholder="password">
+          </div>
+        </div>
+        <div class="form-row p-4 flex flex-row">
+          <button class="p-2 rounded-md bg-blue-600 text-white w-full" (click)="connect()">Connect</button>
+        </div>
+      </div>
+    </div>
+  </div>

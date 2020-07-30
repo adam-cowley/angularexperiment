@@ -1,0 +1,31 @@
+<div class="navigation-item navigation-database flex mb-1 text-sm text-gray-400">
+    <span class="flex flex-grow">
+        {{ database.name }}
+    </span>
+    <div class="navigation-item-status navigation-database-status flex flex-row items-center">
+        <span class="text-xs text-gray-500 flex">{{ database.currentStatus }}</span>
+
+        <container-element [ngSwitch]="database.currentStatus">
+            <span *ngSwitchCase="'online'" class="block align-middle ml-2 w-2 h-2 bg-green-500 rounded-full"></span>
+            <span *ngSwitchCase="'offline'" class="block align-middle ml-2 w-2 h-2 bg-red-500 rounded-full"></span>
+            <span *ngSwitchDefault class="block align-middle ml-2 w-2 h-2 bg-gray-500 rounded-full"></span>
+        </container-element>
+    </div>
+
+    <div class="navigation-item-actions navigation-database-actions flex flex-row items-center">
+        <fa-icon [icon]="edit" class="ml-1"></fa-icon>
+        <fa-icon [icon]="delete" class="ml-1"></fa-icon>
+
+        <fa-icon
+            *ngIf="database.currentStatus=='online'"
+            [icon]="stop"
+            class="ml-2 text-red-500"
+        ></fa-icon>
+        <fa-icon
+             *ngIf="database.currentStatus=='offline'"
+             [icon]="start"
+             class="ml-2 text-green-500"
+        ></fa-icon>
+    </div>
+
+</div>

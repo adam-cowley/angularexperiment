@@ -1,0 +1,37 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation .neo4j path {
+    fill: #ccc
+}
+
+.navigation .labs path {
+    fill: #fff
+}
+
+.navigation-item{
+    .navigation-item-actions {
+        display: none;
+
+        svg {
+            opacity: .8;
+            background: red;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    &:hover {
+        .navigation-item-status {
+            display: none;
+        }
+
+        .navigation-item-actions {
+            display: flex;
+        }
+    }
+}
